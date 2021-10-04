@@ -27,6 +27,9 @@
   "jest": {
     "testEnvironment": "jsdom"
   },
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
   "scripts": {
     "start": "webpack serve --mode=development",
     "lint": "eslint . --ext .ts",
