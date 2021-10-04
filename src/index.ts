@@ -4,8 +4,10 @@ import {
   makeDatasource,
 } from './vscroll';
 
-import { Scroller, Template } from './vscroll-native';
+import { Template, IScroller } from './vscroller-factory';
+import { Scroller } from './vscroll-native';
+import { UhtmlScroller } from './vscroll-uhtml';
 
 const Datasource = makeDatasource();
 
-export { Scroller, Datasource, Template, IDatasource, IAdapter };
+export { IScroller, Scroller, UhtmlScroller, Datasource, Template, IDatasource, IAdapter };
