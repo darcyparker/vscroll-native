@@ -10,7 +10,7 @@ const getDefaultViewportTemplate = () => `<div class="viewport" id="viewport">
   </div>
 </div>`;
 
-const getDefaultItemTemplate: Template<Item> = item =>
+const getDefaultItemTemplate: Template<Item, string> = item =>
   `<div class="item"><span>${item.data.id}</span>) ${item.data.text}</div>`;
 
 const getDefaultDatasource = <Data>() => new Datasource<Data>({
@@ -23,21 +23,21 @@ const getDefaultDatasource = <Data>() => new Datasource<Data>({
   },
 });
 
-export class Misc<Data> {
+export class Misc {
   element: HTMLElement;
-  appScroller: IScroller<Data>;
-  datasource: DatasourceWithAdapter<Data>;
-  adapter: IAdapter<Data>;
-  workflow: Workflow<Data>;
-  scroller: Workflow<Data>['scroller'];
+  appScroller: IScroller<Item>;
+  datasource: DatasourceWithAdapter<Item>;
+  adapter: IAdapter<Item>;
+  workflow: Workflow<Item>;
+  scroller: Workflow<Item>['scroller'];
 
   constructor() {
     this.element = this.prepareViewportElement();
-    const template = getDefaultItemTemplate as unknown as Template<Data>;
+    const template = getDefaultItemTemplate;
     this.datasource = getDefaultDatasource();
     this.adapter = this.datasource.adapter;
 
-    this.appScroller = new AppScroller<Data>({
+    this.appScroller = new AppScroller<Item>({
       element: this.element,
       datasource: this.datasource,
       template
