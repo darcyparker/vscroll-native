@@ -1,6 +1,6 @@
 import { Workflow } from '../../src/vscroll';
 import { workflowStorage } from '../../src/workflow-storage';
-import { Scroller as AppScroller, Datasource, IAdapter, Template } from '../../src/index';
+import { Scroller as AppScroller, IScroller, Datasource, IAdapter, Template } from '../../src/index';
 import { Item, DatasourceWithAdapter } from './types';
 
 const getDefaultViewportTemplate = () => `<div class="viewport" id="viewport">
@@ -25,7 +25,7 @@ const getDefaultDatasource = <Data>() => new Datasource<Data>({
 
 export class Misc<Data> {
   element: HTMLElement;
-  appScroller: AppScroller<Data>;
+  appScroller: IScroller<Data>;
   datasource: DatasourceWithAdapter<Data>;
   adapter: IAdapter<Data>;
   workflow: Workflow<Data>;
