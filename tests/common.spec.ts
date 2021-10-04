@@ -3,15 +3,13 @@ import { Workflow } from 'vscroll';
 import { Scroller, Datasource } from '../src/index';
 import { Misc } from './misc/misc';
 
-import { Item as MyItem } from './misc/types';
-
 describe('Common Spec', () => {
 
   describe('Initialization', () => {
-    let misc: Misc<MyItem>;
+    let misc: Misc;
 
     beforeEach(() => {
-      misc = new Misc<MyItem>();
+      misc = new Misc();
     });
 
     afterEach(() => {
