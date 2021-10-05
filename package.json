@@ -42,7 +42,7 @@
     "prepack": "npm run build"
   },
   "dependencies": {
-    "vscroll": "^1.2.0"
+    "vscroll": "^1.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
