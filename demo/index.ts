@@ -1,4 +1,10 @@
-import { Scroller, Datasource, Template } from '../src/index';
+// import { html, Renderable } from 'uhtml';
+import {
+  // UhtmlScroller,
+  Scroller,
+  Datasource,
+  Template
+} from '../src/index';
 
 const elements = {
   viewport: document.getElementById('viewport'),
@@ -35,9 +41,12 @@ const datasource = new Datasource<MyItem>({
   }
 });
 
-const template: Template<MyItem> = item =>
+const template: Template<MyItem, string> = item =>
   `<div class="item"><span>${item.data.id}</span>) ${item.data.text}</div>`;
 // `<tr class="item"><td><span>${item.data.id}</span>) ${item.data.text}</td></tr>`;
+
+// const template: Template<MyItem, Renderable> = item =>
+//   html`<div class="item"><span>${item.data.id}</span>) ${item.data.text}</div>`;
 
 new Scroller<MyItem>({
   element: elements.viewport,
