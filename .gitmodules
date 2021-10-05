@@ -1,0 +1,3 @@
+[submodule "vscroll"]
+	path = vscroll
+	url = git@github.com:darcyparker/vscroll.git

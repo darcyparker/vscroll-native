@@ -5,4 +5,7 @@ export {
   IAdapter,
   Item,
   IAdapterItem,
-} from 'vscroll'; // '../../vscroll/src/index';
+  WorkflowParams
+// } from 'vscroll'; // '../../vscroll/src/index';
+//Pointing to submodule because I want to capture branch
+} from '../vscroll/src/index';
